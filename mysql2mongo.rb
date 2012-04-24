@@ -54,5 +54,5 @@ tables.each_with_index do |current_table,i|
     j += 1
   end
   puts ''
-  resutl = nil
+  #resutl = nil
 end
