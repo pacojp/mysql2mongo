@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # this program uses mysql library instead of mysql2 library because of 'server side cursor problem(for too-big-tables)'. 
-# under my circumstans, mysql2 :stream option does not work well(may be database is too old(mysql 4.1.***))(2010/4/20).
+# under my circumstans, mysql2 :stream option does not work well(may be database is too old(mysql 4.1.***))(2012/4/20).
 #
 # !! may be mysql library version should be 2.8.XXX. it seems that 3.XXX(still alpla version now) will not support server side cursor.
 #
