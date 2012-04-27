@@ -282,7 +282,7 @@ puts mongos['config']['shards'].find().each{|shard|p shard}
 puts <<"EOS"
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 creating test environment done
-use commands below and try some tests (ex. to kill server and data can still there)
+below commands are examples for testing
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 # starting servers again
@@ -298,6 +298,10 @@ use admin
 db.printShardingStatus(true);
 use hoge
 db.users.count();
+
+# to use this script again(kill all test processes and erace datas and run script again)
+pkill -9 mongod && pkill -9 mongos ; rm -rf #{TEST_DIR}/* ; ruby mongo_test.rb
+
 EOS
 
 #loop do
