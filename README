@@ -1,4 +1,10 @@
 
+# mysql2mongo.rb
+
 usage: as name of script.
 please read comment of script.
 
+# mongo_test.rb
+
+usage: create local test environment for sharding and replicaset.
+please read comment of script.
