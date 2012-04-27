@@ -282,7 +282,7 @@ puts mongos['config']['shards'].find().each{|shard|p shard}
 puts <<"EOS"
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 creating test environment done
-below commands are examples for testing
+commands below are examples for testing
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 # starting servers again
