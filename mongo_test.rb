@@ -231,7 +231,7 @@ end
 puts 'all replicaset is up'
 bar
 
-# create mongos (got error if create mongos before creating replicaset)
+# create mongos (i got error when create mongos before creating replicaset)
 cluster.mongos.each do |mongos|
   port = mongos.port
   hardware = mongos.hardware
@@ -288,18 +288,20 @@ commands below are examples for testing
 # starting servers again
 #{@commands.join(" &\n") + " &"}
 
-# for checking replicaset
+# for checking replicaset(access one of replica)
 mongo #{IP_ADDRESS}:#{cluster.shards[0].replicaset.primary.port}
 rs.status();
 
-# for checking sharding
+# for checking sharding(access one of mongos)
 mongo #{IP_ADDRESS}:#{cluster.mongos[0].port}
 use admin
 db.printShardingStatus(true);
 use hoge
 db.users.count();
+db.users.save({user_id:500001,name:'fuga'});
+db.users.count();
 
-# to use this script again(kill all test processes and erace datas and run script again)
+# to use this script again(kill all test processes and erace all datas and run script again)
 pkill -9 mongod && pkill -9 mongos ; rm -rf #{TEST_DIR}/* ; ruby mongo_test.rb
 
 EOS
